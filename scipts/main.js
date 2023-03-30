@@ -5,220 +5,22 @@ window.onload = () => {
    })
 }
 
-let buttons = [document.querySelector('.but1'),
- document.querySelector('.but2'),
- document.querySelector('.but3'),
- document.querySelector('.but4'),
- document.querySelector('.but5')
-]
+for(let i = 1; i <= 5; i++) {
+   for(let j = 1; j <= 9; j++) {
+      document.querySelector(`.t${i}qust${j}`).addEventListener('click', () => {
+         for(let k = 1; k <= 9; k++) document.querySelector(`.t${i}q` + String(k) + '_variants').classList.add('hide');
+         document.querySelector(`.t${i}q` + String(j) + '_variants').classList.remove('hide');
 
-let theams = [
-   document.querySelector('.theam1'),
-   document.querySelector('.theam2'),
-   document.querySelector('.theam3'),
-   document.querySelector('.theam4'),
-   document.querySelector('.theam5')
-]
+         let url = `../img/${i}_${j}.jpg`
+         document.querySelector(`.t${i}bgT`).style.backgroundImage = `url(${url})`;
+      })
+   }
+}
 
-for(let i = 0; i <= 4; i++) {
-   buttons[i].addEventListener('click', () => {
+for(let i = 1; i <= 5; i++) {
+   document.querySelector(`.but${i}`).addEventListener('click', () => {
       document.querySelector('.Main').classList.add('hide')
-      theams[i].classList.remove('hide')
-   })
-}
-
-
-
-let t1Buts = [
-   document.querySelector('.t1qust1'),
-   document.querySelector('.t1qust2'),
-   document.querySelector('.t1qust3'),
-   document.querySelector('.t1qust4'),
-   document.querySelector('.t1qust5'),
-   document.querySelector('.t1qust6'),
-   document.querySelector('.t1qust7'),
-   document.querySelector('.t1qust8'),
-   document.querySelector('.t1qust9')
-]
-
-for(let i = 0; i <= 8; i++) {
-   t1Buts[i].addEventListener('click', () => {
-      for(let i = 0; i <= 8; i++) document.querySelector('.t1q' + String(i+1) + '_variants').classList.add('hide');
-      document.querySelector('.t1q' + String(i+1) + '_variants').classList.remove('hide');
-
-
-      let url = ''
-      let el = document.querySelector('.backgroundTheam')
-      if(i == 0) 
-         url = '../img/inform.jpg'
-      else if(i == 1) 
-         url = '../img/informatika.jpg'
-      else if(i == 2)
-         url = '../img/programm.jpg'
-      else if(i == 3) 
-         url = '../img/computer.jpg'
-      else if(i == 4) 
-         url = '../img/RAM.jpg'
-      else if(i == 5) 
-         url = '../img/inheritMem.jpg'
-      else if(i == 6) 
-         url = '../img/processor.jpg'
-      else if(i == 7) 
-         url = '../img/laptop_assembly.jpg'
-      else if(i == 8)
-         url = '../img/lang.jpg'
-      el.style.backgroundImage = `url(${url})`;
-   })
-}
-
-let t2Buts = [
-   document.querySelector('.t2qust1'),
-   document.querySelector('.t2qust2'),
-   document.querySelector('.t2qust3'),
-   document.querySelector('.t2qust4'),
-   document.querySelector('.t2qust5'),
-   document.querySelector('.t2qust6'),
-   document.querySelector('.t2qust7'),
-   document.querySelector('.t2qust8'),
-   document.querySelector('.t2qust9')
-]
-
-for(let i = 0; i <= 8; i++) {
-   t2Buts[i].addEventListener('click', () => {
-      for(let i = 0; i <= 8; i++) document.querySelector('.t2q' + String(i+1) + '_variants').classList.add('hide');
-      document.querySelector('.t2q' + String(i+1) + '_variants').classList.remove('hide');
-
-
-      let url = ''
-      let el = document.querySelector('.t2bgT')
-      if(i == 0) 
-         url = '../img/2_1.jpg'
-      else if(i == 1) 
-         url = '../img/2_2.jpg'
-      else if(i == 2)
-         url = '../img/2_3.jpg'
-      else if(i == 3) 
-         url = '../img/2_4.jpg'
-      else if(i == 4) 
-         url = '../img/2_5.jpg'
-      else if(i == 5) 
-         url = '../img/2_6.jpg'
-      else if(i == 6) 
-         url = '../img/computer.jpg'
-      else if(i == 7) 
-         url = '../img/2_8.jpg'
-      else if(i == 8)
-         url = '../img/2_9.jpg'
-      el.style.backgroundImage = `url(${url})`;
-   })
-}
-
-let t3Buts = [
-   document.querySelector('.t3qust1'),
-   document.querySelector('.t3qust2'),
-   document.querySelector('.t3qust3'),
-   document.querySelector('.t3qust4'),
-   document.querySelector('.t3qust5'),
-   document.querySelector('.t3qust6'),
-   document.querySelector('.t3qust7'),
-   document.querySelector('.t3qust8'),
-   document.querySelector('.t3qust9')
-]
-
-for(let i = 0; i <= 8; i++) {
-   t3Buts[i].addEventListener('click', () => {
-      for(let i = 0; i <= 8; i++) document.querySelector('.t3q' + String(i+1) + '_variants').classList.add('hide');
-      document.querySelector('.t3q' + String(i+1) + '_variants').classList.remove('hide');
-
-
-      let url = ''
-      let el = document.querySelector('.t3bgT')
-      url = '../img/3_' + String(i+1) +'.jpg'
-      el.style.backgroundImage = `url(${url})`;
-   })
-}
-
-let t4Buts = [
-   document.querySelector('.t4qust1'),
-   document.querySelector('.t4qust2'),
-   document.querySelector('.t4qust3'),
-   document.querySelector('.t4qust4'),
-   document.querySelector('.t4qust5'),
-   document.querySelector('.t4qust6'),
-   document.querySelector('.t4qust7'),
-   document.querySelector('.t4qust8'),
-   document.querySelector('.t4qust9')
-]
-
-for(let i = 0; i <= 8; i++) {
-   t4Buts[i].addEventListener('click', () => {
-      for(let i = 0; i <= 8; i++) document.querySelector('.t4q' + String(i+1) + '_variants').classList.add('hide');
-      document.querySelector('.t4q' + String(i+1) + '_variants').classList.remove('hide');
-
-
-      let url = ''
-      let el = document.querySelector('.t4bgT')
-      if(i == 0) 
-         url = '../img/inform.jpg'
-      else if(i == 1) 
-         url = '../img/informatika.jpg'
-      else if(i == 2)
-         url = '../img/programm.jpg'
-      else if(i == 3) 
-         url = '../img/computer.jpg'
-      else if(i == 4) 
-         url = '../img/RAM.jpg'
-      else if(i == 5) 
-         url = '../img/inheritMem.jpg'
-      else if(i == 6) 
-         url = '../img/processor.jpg'
-      else if(i == 7) 
-         url = '../img/laptop_assembly.jpg'
-      else if(i == 8)
-         url = '../img/lang.jpg'
-      el.style.backgroundImage = `url(${url})`;
-   })
-}
-
-let t5Buts = [
-   document.querySelector('.t5qust1'),
-   document.querySelector('.t5qust2'),
-   document.querySelector('.t5qust3'),
-   document.querySelector('.t5qust4'),
-   document.querySelector('.t5qust5'),
-   document.querySelector('.t5qust6'),
-   document.querySelector('.t5qust7'),
-   document.querySelector('.t5qust8'),
-   document.querySelector('.t5qust9')
-]
-
-for(let i = 0; i <= 8; i++) {
-   t5Buts[i].addEventListener('click', () => {
-      for(let i = 0; i <= 8; i++) document.querySelector('.t5q' + String(i+1) + '_variants').classList.add('hide');
-      document.querySelector('.t5q' + String(i+1) + '_variants').classList.remove('hide');
-
-
-      let url = ''
-      let el = document.querySelector('.t4bgT')
-      if(i == 0) 
-         url = '../img/inform.jpg'
-      else if(i == 1) 
-         url = '../img/informatika.jpg'
-      else if(i == 2)
-         url = '../img/programm.jpg'
-      else if(i == 3) 
-         url = '../img/computer.jpg'
-      else if(i == 4) 
-         url = '../img/RAM.jpg'
-      else if(i == 5) 
-         url = '../img/inheritMem.jpg'
-      else if(i == 6) 
-         url = '../img/processor.jpg'
-      else if(i == 7) 
-         url = '../img/laptop_assembly.jpg'
-      else if(i == 8)
-         url = '../img/lang.jpg'
-      el.style.backgroundImage = `url(${url})`;
+      document.querySelector(`.theam${i}`).classList.remove('hide')
    })
 }
 
@@ -228,19 +30,19 @@ let answeredQusts = 0
 
 for(let i = 1; i <= 5; i++) {
    for(let j = 1; j <= 9; j++) {
-      for(let k = 1; k <= 4; k++) {
-         let btn = document.querySelector(`.t${i}q${j}b${k}`)
-         btn.addEventListener('click', () => {
-            let qustBtn = document.querySelector(`.t${i}qust${j}`)
-            if(!qustBtn.classList.contains('answered')) {
+      let qustBtn = document.querySelector(`.t${i}qust${j}`)
+      if(!qustBtn.classList.contains('answered')) {
+         for(let k = 1; k <= 4; k++) {
+            let btn = document.querySelector(`.t${i}q${j}b${k}`)
+            btn.addEventListener('click', () => {
                btn.classList.add('variantBtnPressed')
                if(btn.classList.contains('cor')) {
                   score += 1
                }
                answeredQusts += 1
                qustBtn.classList.add('answered')
-            }
-         })
+            })
+         }
       }
    }
 }
@@ -255,11 +57,7 @@ let btnsBack = [
 
 btnsBack.forEach(el => {
    el.addEventListener('click', () => {
-      theams.forEach(el => {
-         el.classList.add('hide')
-      });
-   
-   
+      for(let i = 1; i <= 5; i++) document.querySelector(`.theam${i}`).classList.add('hide')
       document.querySelector('.Main').classList.remove('hide');
    })
 });
