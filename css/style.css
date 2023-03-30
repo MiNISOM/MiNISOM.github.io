@@ -8,6 +8,7 @@ body {
    overflow: hidden;
    max-width: 100vw;
    max-height: 100bh;
+   background: linear-gradient(to top right, rgb(65, 71, 62), #a8846a);
 }
 
 .hide {
@@ -26,11 +27,16 @@ body {
 }
 
 .Main .wrapper {
-   width: 30%;
+   position: absolute;
+   left: -10%;
+   width: 50%;
    height: 100%;
-   margin-left: 10%;
    margin-right: 10%;
    padding: 0 100px 100px 100px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
 }
 
 .Main .mainScore {
@@ -62,7 +68,6 @@ body {
    justify-content: center;
    height: 60px;
    width: 300px;
-   margin-top: 30%;
    color: rgb(255, 236, 131);
    font: 24px cursive;
    border: 1px solid goldenrod;
@@ -74,7 +79,7 @@ body {
                0 0 3px 1px gold;
    overflow: hidden;
    transition: 1s;
-   transition-property: background;
+   transition-property:  margin-left,background;
    cursor: pointer;
    text-align: center !important;
    background: rgba(65, 71, 62, 0.815);
@@ -84,8 +89,8 @@ body {
 .Main .introBut{
    display: block;
    position: absolute;
-   padding: 30px !important;
-   width: 40%;  
+   padding: 30px;
+   width: 40vw;  
    top: 10%;
    right: 16%;
    margin-top: 0;
@@ -97,10 +102,16 @@ body {
                0 0 30px goldenrod,
                0 0 10px gold,
                0 0 3px 1px gold;
-   color: rgb(255, 236, 131);
+   color: rgb(255, 243, 173);
    font: 28px cursive;
    cursor: pointer;
-   background: rgba(65, 71, 62, 0.815);
+   background: #ffcc244b;
+   transition: 1s;
+   transition-property: letter-spacing;
+}
+
+.Main .introBut:hover {
+   letter-spacing: 15px;
 }
 
 .Main .but::before {
@@ -117,6 +128,7 @@ body {
 
 .Main .but:hover {
    background: #ffcc244b;
+   margin-left: 100px;
 }
 
 .Main .but:hover::before {
@@ -134,7 +146,7 @@ body {
 
 .Main .mainVideo {
    position: absolute;
-   top: 30%;
+   top: 35%;
    left: 38%;
    background-repeat: 30px;
    background: linear-gradient(gold, rgba(255, 217, 0, 0.288));
@@ -148,10 +160,21 @@ body {
    height: 55%;
 }
 
+.mainBackgroundCover {
+   position: absolute;
+   top: -10%;
+   left: -10%;
+   height: 130%;
+   width: 23%;
+   rotate: -3deg;
+   background: rgb(65, 71, 62);
+   border: 3px solid rgb(209, 223, 203);;
+}
+
 .mainVideo__photo {
    width: 100%;
    height: 100%;
-   background: url('../img/theBest.png') center / cover;
+   background: url('../img/theBest2.png') center / cover;
    transition: 1s;
    transition-property: transform;
 }
@@ -282,6 +305,7 @@ body {
    filter: sepia(100%);
    transition: 1s;
    transition-property: filter;
+   border-radius: 14px;
 }
 
 .backgroundTheam:hover {
@@ -308,6 +332,7 @@ body {
    background: #29292936;
    top: 3%;
    right: 3%;
+   border-radius: 7px;
 }
 
 .btnBack {
@@ -339,8 +364,28 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
    font: 28px cursive;
    color: rgb(255, 236, 131);
+}
+
+.scoreResetResult {
+   border: 1px solid gold;
+   border-radius: 10px;
+   padding: 10px;
+   margin-top: 50px;
+   background: rgba(65, 71, 62, 0.815);
+   cursor: pointer;
+   transition: 1s;
+   transition-property: box-shadow, letter-spacing;
+}
+
+.scoreResetResult:hover {
+   letter-spacing: 1px;
+}
+
+.scoreResetResult:hover {
+   box-shadow: 0 0 10px gold;
 }
 
 .secScoreWrap {
@@ -517,7 +562,7 @@ body {
 .backToBaseCompInfo__btn{
    position: absolute;
    text-align: center;
-   color: gold;
+   color: rgb(255, 235, 121);
    border-radius: 10px;
    bottom: 15%;
    width: 300px;
@@ -571,12 +616,14 @@ body {
 }
 
 .partsOfCompInfo {
-   position: absolute;
+   position: fixed;
+   top: 0;
+   left: 0; 
    top: 30px;
    left: 30%;
    color: rgb(255, 236, 131);
    font: 28px cursive;
-   width: 30vw;
+   width: 50vw;
    padding: 30px;
    background: rgba(65, 71, 62, 0.932);
    opacity: 0;
@@ -640,5 +687,4 @@ body {
 .energyForMotherBoard:hover .energyForMotherBoardInfo {
    visibility: visible;
    opacity: 1;
-   left: -100px;
 }
