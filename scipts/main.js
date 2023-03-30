@@ -5,30 +5,13 @@ window.onload = () => {
    })
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-   const images = new Array();
-
-   function preloadImages(...images) {
-       images.forEach((image, i) => {
-           image = new Image();
-           image.src = preloadImages.arguments[i];
-       });
-   };
-
-   // Предварительная загрузка нужных картинок
-   preloadImages(
-       "../img/1_1.jpg",
-       "../img/1_2.jpg"
-   );
-});
-
 for(let i = 1; i <= 5; i++) {
    for(let j = 1; j <= 9; j++) {
       document.querySelector(`.t${i}qust${j}`).addEventListener('click', () => {
          for(let k = 1; k <= 9; k++) document.querySelector(`.t${i}q` + String(k) + '_variants').classList.add('hide');
          document.querySelector(`.t${i}q` + String(j) + '_variants').classList.remove('hide');
 
-         let url = `../img/${i}_${j}.jpg`
+         let url = `../img/a${i}_${j}.jpg`
          document.querySelector(`.t${i}bgT`).style.backgroundImage = `url(${url})`;
       })
    }
