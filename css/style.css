@@ -6,8 +6,8 @@
 
 body {
    overflow: hidden;
-   max-width: 100vw;
-   max-height: 100bh;
+   width: 100vw;
+   height: 100bh;
    background: linear-gradient(to top right, rgb(65, 71, 62), #a8846a);
 }
 
@@ -217,6 +217,7 @@ body {
 .qustMain div {
    width: 700px;
    position: relative;
+   left: 7%;
    text-align: center;
    font: 24px cursive; 
    color: rgb(255, 236, 131);
@@ -269,6 +270,7 @@ body {
 }
 
 .variants .line div {
+   position: relative;
    margin: 30px;
    padding: 15px;
    border: 1px solid gold;
@@ -281,6 +283,7 @@ body {
    transition: 1s;
    transition-property: box-shadow;
    text-align: center;
+   overflow: hidden;
 }
 
 .variants .line div::first-letter {
@@ -295,22 +298,38 @@ body {
    box-shadow: 0 0 10px rgb(255, 251, 226);
 }
 
+.variants .line div::before {
+   content: '';
+   position: absolute;
+   width: 70px;
+   height: 30px;
+   background: linear-gradient(rgb(255, 79, 79), rgb(255, 24, 132));
+   rotate: 45deg;
+   top: 0;
+   right: -100px;
+   transition: 1s;
+   transition-property: right;
+}
+
+.variants .line div.variantBtnPressed::before {
+   right: -30px;
+}
+
 .backgroundTheam {
    position: absolute;
    width: 40%;
    height: 40%;
-   background: url('../img/processor.jpg') center / cover;
+   background: url('../img/processor.jpg') center / cover no-repeat;
    top: 5%;
    right: 5%;
-   filter: sepia(100%);
-   transition: 1s;
-   transition-property: filter;
+   transition-property: transform,background;
    border-radius: 14px;
 }
 
 .backgroundTheam:hover {
    transition: 1s;
-   filter: sepia(0%);
+   transition-property: transform,background;
+   transform: scale(1.03);
 }
 
 .backgroundTheam2 {
