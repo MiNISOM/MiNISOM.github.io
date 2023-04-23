@@ -73,13 +73,9 @@ body {
    border: 1px solid goldenrod;
    padding: 40px 30px;
    border-radius: 20px;
-   box-shadow: 0 0 50px goldenrod,
-               0 0 30px goldenrod,
-               0 0 10px gold,
-               0 0 3px 1px gold;
    overflow: hidden;
    transition: 1s;
-   transition-property:  margin-left,background;
+   transition-property:  margin-left, background, box-shadow;
    cursor: pointer;
    text-align: center !important;
    background: rgba(65, 71, 62, 0.815);
@@ -129,6 +125,10 @@ body {
 .Main .but:hover {
    background: #ffcc244b;
    margin-left: 100px;
+   box-shadow: 0 0 50px goldenrod,
+      0 0 30px goldenrod,
+      0 0 10px gold,
+      0 0 3px 1px gold;
 }
 
 .Main .but:hover::before {
@@ -467,6 +467,7 @@ body {
    transition: 1s;
    transition-property: filter;
    border-radius: 10px;
+   pointer-events: none;
 }
 
 .introImg.hovered {
