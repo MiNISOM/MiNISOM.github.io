@@ -281,9 +281,13 @@ body {
    cursor: pointer;
    background: rgba(65, 71, 62, 0.815);
    transition: 1s;
-   transition-property: box-shadow;
+   transition-property: box-shadow, transform;
    text-align: center;
    overflow: hidden;
+}
+
+.variants .line div:hover {
+   transform: scale(1.1);
 }
 
 .variants .line div::first-letter {
