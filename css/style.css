@@ -94,19 +94,19 @@ body {
    text-align: center;
    border: 1px solid gold;
    border-radius: 20px;
-   box-shadow: 0 0 50px goldenrod,
-               0 0 30px goldenrod,
-               0 0 10px gold,
-               0 0 3px 1px gold;
    color: rgb(255, 243, 173);
    font: 28px cursive;
    cursor: pointer;
    background: #ffcc244b;
    transition: 1s;
-   transition-property: letter-spacing;
+   transition-property: letter-spacing, box-shadow;
 }
 
 .Main .introBut:hover {
+   box-shadow: 0 0 50px goldenrod,
+               0 0 30px goldenrod,
+               0 0 10px gold,
+               0 0 3px 1px gold;
    letter-spacing: 15px;
 }
 
