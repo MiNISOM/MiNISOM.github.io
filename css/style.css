@@ -466,6 +466,7 @@ body {
    background: url('../img/a2_3.jpg') center / cover;
    transition: 1s;
    transition-property: filter;
+   border-radius: 10px;
 }
 
 .introImg.hovered {
@@ -583,7 +584,7 @@ body {
    text-align: center;
    color: rgb(255, 235, 121);
    border-radius: 10px;
-   bottom: 15%;
+   bottom: 13%;
    width: 300px;
    font: 24px cursive;
    left: 43%;
@@ -704,6 +705,8 @@ body {
 }
 
 .energyForMotherBoard:hover .energyForMotherBoardInfo {
+   height: 55vh;
+   background: url('../img/energy.png') center / cover;
    visibility: visible;
    opacity: 1;
 }
