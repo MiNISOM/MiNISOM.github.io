@@ -21,6 +21,7 @@ for(let i = 1; i <= 5; i++) {
    document.querySelector(`.but${i}`).addEventListener('click', () => {
       document.querySelector('.Main').classList.add('hide')
       document.querySelector(`.theam${i}`).classList.remove('hide')
+      document.querySelector('.mainBackgroundCover').classList.add('active')
    })
 }
 
@@ -31,19 +32,21 @@ let answeredQusts = 0
 for(let i = 1; i <= 5; i++) {
    for(let j = 1; j <= 9; j++) {
       let qustBtn = document.querySelector(`.t${i}qust${j}`)
-      if(!qustBtn.classList.contains('answered')) {
          for(let k = 1; k <= 4; k++) {
             let btn = document.querySelector(`.t${i}q${j}b${k}`)
             btn.addEventListener('click', () => {
-               btn.classList.add('variantBtnPressed')
-               if(btn.classList.contains('cor')) {
-                  score += 1
+               if (!qustBtn.classList.contains('answered'))
+               {
+                  btn.classList.add('variantBtnPressed')
+                  if(btn.classList.contains('cor')) {
+                     score += 1
+                  }
+                  answeredQusts += 1
+                  qustBtn.classList.add('answered')
                }
-               answeredQusts += 1
-               qustBtn.classList.add('answered')
+               
             })
          }
-      }
    }
 }
 
@@ -59,6 +62,7 @@ btnsBack.forEach(el => {
    el.addEventListener('click', () => {
       for(let i = 1; i <= 5; i++) document.querySelector(`.theam${i}`).classList.add('hide')
       document.querySelector('.Main').classList.remove('hide');
+      document.querySelector('.mainBackgroundCover').classList.remove('active')
    })
 });
 
